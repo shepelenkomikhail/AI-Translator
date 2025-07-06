@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+.root {
+    font-family: Poppins, sans-serif;
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Adjust scrollbar width */
+    background-color: transparent; /* Make track transparent */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Customize thumb color */
+    border-radius: 5px; /* Round corners */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* thumb and track color */
+}
