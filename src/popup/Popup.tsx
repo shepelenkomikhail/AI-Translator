@@ -77,7 +77,7 @@ export default function Popup() {
             if (inputText.trim() !== '') {
                 handleTranslate();
             }
-        }, 1000);
+        }, 500);
     }
 
     const handleTranslateSecondWindow = () => {
@@ -127,19 +127,19 @@ export default function Popup() {
 
                         Return only the translation and transcription of translated text in form /transcription/, no additional text.
                         Response should be in json format. e.g. {"translation": "translated text", "transcription": "/transcription/"}.
-                        If there are less than 3 words in the text, return only the translation.
+                        Transcription has to be transcripting target text in target language. If there are less than 3 words in the text, return only the translation.
                         Text to translate: \n\n${inputText}`;
             } else if (sourceLanguageAI === "auto") {
                 prompt = `Translate the following text to ${targetLanguageAI}.
                         Return only the translation and transcription of translated text in form /transcription/, no additional text.
                         Response should be in json format. e.g. {"translation": "translated text", "transcription": "/transcription/"}.
-                        If there are less than 3 words in the text, return only the translation.
+                        Transcription has to be transcripting target text in target language. If there are less than 3 words in the text, return only the translation.
                         Text to translate: \n\n${inputText}`;
             } else {
-                prompt = `Translate the following text from ${sourceLanguageAI} to ${targetLanguageAI}.
+                prompt = `Translate the following text from ${sourceLanguageAI} to ${targetLanguageAI}. If you are sure that text is not in ${sourceLanguageAI}, detect the language by your own.
                         Return only the translation and transcription of translated text in form /transcription/, no additional text.
                         Response should be in json format. e.g. {"translation": "translated text", "transcription": "/transcription/"}.
-                        If there are less than 3 words in the text, return only the translation.
+                        Transcription has to be transcripting target text in target language. If there are less than 3 words in the text, return only the translation.
                         Text to translate: \n\n${inputText}`;
             }
 
