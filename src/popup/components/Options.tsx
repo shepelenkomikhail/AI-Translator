@@ -1,4 +1,5 @@
-import {languages} from "./languages.ts";
+import {languages} from "../languages.ts";
+import * as React from "react";
 
 interface OptionsProps {
     darkMode: boolean;
